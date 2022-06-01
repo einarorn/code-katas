@@ -14,10 +14,8 @@ func DivideUntilOne(number int) []int {
 		switch remainder {
 		case 0:
 			number = number / 3
-			break
 		case 1:
 			number--
-			break
 		case 2:
 			number++
 		}
