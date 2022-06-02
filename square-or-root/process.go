@@ -7,7 +7,6 @@ func ProcessNumber(num int) int {
 	if results != math.Floor(results) {
 		results = math.Pow(float64(num), 2)
 	}
-
 	return int(results)
 }
 

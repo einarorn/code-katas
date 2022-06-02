@@ -1,9 +1,11 @@
-package rotate
+package rotate_test
 
 import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+
+	"code-katas/rotate"
 )
 
 func TestGameOfThrees_DivideAndPrintUntilOne(t *testing.T) {
@@ -11,7 +13,7 @@ func TestGameOfThrees_DivideAndPrintUntilOne(t *testing.T) {
 		input := []int{1, 2, 3, 4, 5, 6}
 		expected := []int{3, 4, 5, 6, 1, 2}
 
-		actual := ShiftLeft(input, 2)
+		actual := rotate.ShiftLeft(input, 2)
 
 		assert.Equal(t, expected, actual)
 	})
@@ -20,7 +22,7 @@ func TestGameOfThrees_DivideAndPrintUntilOne(t *testing.T) {
 		input := []int{1, 2}
 		expected := []int{2, 1}
 
-		actual := ShiftLeft(input, 7)
+		actual := rotate.ShiftLeft(input, 7)
 
 		assert.Equal(t, expected, actual)
 	})
@@ -29,7 +31,7 @@ func TestGameOfThrees_DivideAndPrintUntilOne(t *testing.T) {
 		input := []int{1}
 		expected := []int{1}
 
-		actual := ShiftLeft(input, 3)
+		actual := rotate.ShiftLeft(input, 3)
 
 		assert.Equal(t, expected, actual)
 	})
