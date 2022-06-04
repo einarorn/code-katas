@@ -1,10 +1,11 @@
 package main
 
 import (
-	game_of_threes "code-katas/game-of-threes"
 	"fmt"
 	"os"
 	"strconv"
+
+	game_of_threes "code-katas/game-of-threes"
 )
 
 func main() {
