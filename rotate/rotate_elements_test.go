@@ -1,11 +1,10 @@
 package rotate_test
 
 import (
+	"code-katas/rotate"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-
-	"code-katas/rotate"
 )
 
 func TestGameOfThrees_DivideAndPrintUntilOne(t *testing.T) {

@@ -8,22 +8,32 @@ func SortTwoLists(list1, list2 []int) []int {
 			return mergedList
 		}
 
-		switch true {
-		case len(list1) == 0:
-			mergedList, list2 = appendAndPop(mergedList, list2)
-		case len(list2) == 0:
-			mergedList, list1 = appendAndPop(mergedList, list1)
-		default:
-			if list1[0] < list2[0] {
-				mergedList, list1 = appendAndPop(mergedList, list1)
-			} else {
-				mergedList, list2 = appendAndPop(mergedList, list2)
-			}
+		if len(list1) == 0 {
+			mergedList, list2 = appendAndPop(mergedList, list2, true)
+			continue
 		}
+
+		if len(list2) == 0 {
+			mergedList, list1 = appendAndPop(mergedList, list1, true)
+			continue
+		}
+
+		if list1[0] < list2[0] {
+			mergedList, list1 = appendAndPop(mergedList, list1, false)
+		} else {
+			mergedList, list2 = appendAndPop(mergedList, list2, false)
+		}
+
 	}
 }
 
-func appendAndPop(merged, list []int) ([]int, []int) {
-	merged = append(merged, list[0])
-	return merged, list[1:]
+func appendAndPop(merged, list []int, popAll bool) ([]int, []int) {
+	if popAll {
+		merged = append(merged, list...)
+		list = []int{}
+	} else {
+		merged = append(merged, list[0])
+		list = list[1:]
+	}
+	return merged, list
 }
