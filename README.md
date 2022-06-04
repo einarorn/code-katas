@@ -64,7 +64,7 @@ lettersum("microspectrophotometries") => 317
 go test .\letter-sum -v
 ```
 ### Run program
-Program takes in an argument which is the number to run against
+Program takes in an argument which is the word to sum all letters
 ```
 go run .\letter-sum\cmd\ settlements
 ```
