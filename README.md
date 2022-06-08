@@ -1,4 +1,4 @@
-# Code Katas
+# Code Kata's
 
 ## [001] Game of Threes
 Given any number, repeatedly divide the number by 3 till you reach 1. Add or subtract 1 whenever division by 3 is not possible. At each stage output the number
