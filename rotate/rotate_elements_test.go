@@ -1,8 +1,9 @@
 package rotate_test
 
 import (
-	"code-katas/rotate"
 	"testing"
+
+	"code-katas/rotate"
 
 	"github.com/stretchr/testify/assert"
 )
