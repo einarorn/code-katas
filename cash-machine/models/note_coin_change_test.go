@@ -44,8 +44,7 @@ func TestModels_NotesAndCoinsToString(t *testing.T) {
 	}
 
 	for _, tt := range testCases {
-		t.Run(fmt.Sprintf("Given notes and coins change \"%v\" we expect convertion to string to be \"%s\"", tt.input, tt.expected), func(t *testing.T) {
-			fmt.Println(tt.expected)
+		t.Run(fmt.Sprintf("Given notes and coins change value is \"%v\" we expect convertion to string to be \"%s\"", tt.input, tt.expected), func(t *testing.T) {
 			actual := tt.input.NotesAndCoinsToString()
 			assert.Equal(t, tt.expected, actual)
 		})

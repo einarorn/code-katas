@@ -30,7 +30,6 @@ func TestCashMachine_Withdrawal(t *testing.T) {
 
 	for _, tt := range testCases {
 		t.Run(fmt.Sprintf("Given input \"%s\" we expect \"%v\" to be returned", strconv.FormatFloat(tt.input, 'f', -1, 64), tt.expected), func(t *testing.T) {
-			fmt.Println(tt.expected)
 			actual, err := cashmachine.BreakIntoChange(tt.input)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.expected, actual)
