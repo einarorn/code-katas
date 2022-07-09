@@ -117,7 +117,7 @@ breakIntoChange(0.13) // ```{'10p': 1, '2p': 1, '1p': 1}```
 
 ### Run tests
 ```
-go test ./cash-machine -v
+go test ./cash-machine/... -v
 ```
 
 ### Run program
