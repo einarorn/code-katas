@@ -32,7 +32,7 @@ func BreakIntoChange(amount float64) (string, error) {
 	}
 
 	change := models.ATMChange{}
-	intValue := int(amount * 100)
+	intValue := int(amount*100 + 0.01) // add 0.01 precision for float64 to int conversion
 
 	for _, nc := range noteCoinConstants {
 		count := intValue / nc.Value
