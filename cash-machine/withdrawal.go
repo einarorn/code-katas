@@ -6,12 +6,12 @@ import (
 	"code-katas/cash-machine/models"
 )
 
-type NoteCoinConstant struct {
+type noteCoinConstant struct {
 	Name  string
 	Value int
 }
 
-var NoteCoinConstants = [...]NoteCoinConstant{
+var noteCoinConstants = [...]noteCoinConstant{
 	{Name: "£50", Value: 5000},
 	{Name: "£20", Value: 2000},
 	{Name: "£10", Value: 1000},
@@ -34,7 +34,7 @@ func BreakIntoChange(amount float64) (string, error) {
 	change := models.ATMChange{}
 	intValue := int(amount * 100)
 
-	for _, nc := range NoteCoinConstants {
+	for _, nc := range noteCoinConstants {
 		count := intValue / nc.Value
 		if count > 0 {
 			change = append(change, models.NoteCoinChange{
