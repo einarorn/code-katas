@@ -102,10 +102,10 @@ You're writing software for a cash machine (ATM) in the UK.
 Assume that machines have an unlimited number of coins & notes in the following denominations:
 
 ```
-£50, £20, £10, £5, £2, £1, 50p, 20p, 10p, 5p, 2p, 1p
+    £50, £20, £10, £5, £2, £1, 50p, 20p, 10p, 5p, 2p, 1p
 ```
 
-Write a function breakIntoChange(amount) that takes any non-negative amount in pounds and returns the minimum number of coins and notes representating that amount.
+Write a function breakIntoChange(amount) that takes any non-negative amount in pounds and returns the minimum number of coins and notes representation that amount.
 
 e.g.
 
