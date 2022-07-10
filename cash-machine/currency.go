@@ -14,7 +14,7 @@ type (
 )
 
 func InitializeGPB() Currency {
-	nc := []NoteCoin{
+	units := []NoteCoin{
 		{Name: "£50", Value: 5000},
 		{Name: "£20", Value: 2000},
 		{Name: "£10", Value: 1000},
@@ -32,6 +32,6 @@ func InitializeGPB() Currency {
 	return Currency{
 		Code:     "GBP",
 		Decimals: 2,
-		Units:    nc,
+		Units:    units,
 	}
 }

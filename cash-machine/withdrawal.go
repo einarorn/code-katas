@@ -7,17 +7,23 @@ import (
 	"code-katas/cash-machine/models"
 )
 
-func BreakIntoChange(amount float64) (string, error) {
+type cashMachine struct {
+	currency Currency
+}
+
+func New(currency Currency) *cashMachine {
+	return &cashMachine{currency: currency}
+}
+
+func (a cashMachine) BreakIntoChange(amount float64) (string, error) {
 	if amount < 0 {
 		return "", fmt.Errorf("numbers less than zero are not allowed")
 	}
 
-	currGBP := InitializeGPB()
-
 	change := models.ATMChange{}
-	intValue := int(amount*math.Pow(10, currGBP.Decimals) + 0.01) // add 0.01 precision for float64 to int conversion
+	intValue := int(amount*math.Pow(10, a.currency.Decimals) + 0.01) // add 0.01 precision for float64 to int conversion
 
-	for _, nc := range currGBP.Units {
+	for _, nc := range a.currency.Units {
 		count := intValue / nc.Value
 		if count > 0 {
 			change = append(change, models.NoteCoinChange{

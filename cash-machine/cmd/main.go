@@ -15,7 +15,8 @@ func main() {
 		os.Exit(42)
 	}
 
-	value, err := cashmachine.BreakIntoChange(num)
+	cm := cashmachine.New(cashmachine.InitializeGPB())
+	value, err := cm.BreakIntoChange(num)
 	if err != nil {
 		fmt.Println(err)
 	} else {
